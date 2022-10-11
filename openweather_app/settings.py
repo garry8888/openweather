@@ -12,21 +12,14 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 import environ
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from .env import env
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-env = environ.Env()
-# reading .env file
-env.read_env()
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'SCRET_KEY'
+SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,11 +75,11 @@ WSGI_APPLICATION = 'openweather_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'openweather_site',
-        'USER': 'postgres',
-        'PASSWORD': 'vfzvb2012',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': env.str('POSTGRES_DB'),
+        'USER': env.str('POSTGRES_USER'),
+        'PASSWORD': env.str('POSTGRES_PASSWORD'),
+        'HOST': env.str('POSTGRES_HOST'),
+        'PORT': env.str('POSTGRES_PORT'),
     }
 }
 
