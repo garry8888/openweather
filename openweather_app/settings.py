@@ -10,8 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-import os
-import environ
 from .env import env
 
 
@@ -71,6 +69,7 @@ WSGI_APPLICATION = 'openweather_app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+# SECURITY WARNING: keep the secret key used in production secret!
 
 DATABASES = {
     'default': {

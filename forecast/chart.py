@@ -1,14 +1,11 @@
-from decimal import Decimal
-
 import matplotlib.pyplot as plt
 import base64
 from io import BytesIO
-import time
 
 from .get_city_weather import get_hourly_forecast
 
 
-# интерактивный вывод пирога
+# interactive rendering of the bar chart
 def get_pie():
     buffer = BytesIO()
     plt.savefig(buffer, format='png')
@@ -21,7 +18,7 @@ def get_pie():
     return graph
 
 
-# интерактивный вывод столбчатой диаграммы
+# create a bar chart for hourly temperature visualisation
 def get_bar_chart(api_key):
     plt.switch_backend('AGG')
     chart_data = get_hourly_forecast(api_key)

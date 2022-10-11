@@ -5,7 +5,7 @@ from forecast.chart import get_bar_chart
 from forecast.get_city_weather import get_hourly_forecast
 
 
-def index(request):
+def current_weather(request):
     api_id = 'appid=' + env.str('API_KEY')
     gdansk_url = 'https://api.openweathermap.org/data/2.5/weather?q=Gdansk&mode=html&units=metric&{api_key}'\
         .format(api_key=api_id)
@@ -17,7 +17,7 @@ def index(request):
         .format(api_key=api_id)
     krakow_url = 'https://api.openweathermap.org/data/2.5/weather?q=Krakow&mode=html&units=metric&{api_key}'\
         .format(api_key=api_id)
-    zakopane_url = 'https://api.openweathermap.org/data/2.5/weather?q=Krakow&mode=html&units=metric&{api_key}'.\
+    zakopane_url = 'https://api.openweathermap.org/data/2.5/weather?q=Zakopane&mode=html&units=metric&{api_key}'.\
         format(api_key=api_id)
 
     return render(request, 'forecast/city_weather.html', {'gdansk': gdansk_url,
