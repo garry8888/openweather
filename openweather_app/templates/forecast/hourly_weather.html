@@ -4,9 +4,9 @@
     <div class="text-center">
         <h1><strong>Weather in Wroclaw for 24 hour</strong></h1>
     </div>
-    <div class="row" style="display: flex;">
+    <div class="inline-block">
         <div class="row">
-            <div class="col-sm-15">
+            <div class="col-sm-5">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <fieldset class="module aligned " style="width:100%">
@@ -21,29 +21,29 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <table id="t01" width="50%" style="width: 100%; margin-bottom: 20px; border: 1px solid #dddddd; border-collapse: collapse; background: #fffaf0;">
-                        <tr style="font-weight: bold; padding: 5px; background: #afeeee; border: 1px solid #dddddd;">
-                            <th>DateTime</th>
-                            <th>Temperature, C</th>
-                            <th>Feels like, C</th>
-                            <th>Wind Speed</th>
-                            <th>Description</th>
-                        </tr>
-                        {% for data in table_data %}
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table id="t01" width="50%" style="width: 100%; margin-bottom: 20px; border: 1px solid #dddddd; border-collapse: collapse; background: #fffaf0;">
+                            <tr style="font-weight: bold; padding: 5px; background: #afeeee; border: 1px solid #dddddd;">
+                                <th>DateTime</th>
+                                <th>Temperature, C</th>
+                                <th>Feels like, C</th>
+                                <th>Wind Speed</th>
+                                <th>Description</th>
+                            </tr>
+                            {% for data in table_data %}
 
-                        <tr style="border: 1px solid #dddddd; padding: 5px;">
-                            <td>{{data.date}}</td>
-                            <td>{{data.temperature}}</td>
-                            <td>{{data.feels_like}}</td>
-                            <td>{{data.wind_speed}}</td>
-                            <td>{{data.description}}</td>
-                        </tr>
-                        {% endfor %}
-                    </table>
+                            <tr style="border: 1px solid #dddddd; padding: 5px;">
+                                <td>{{data.date}}</td>
+                                <td>{{data.temperature}}</td>
+                                <td>{{data.feels_like}}</td>
+                                <td>{{data.wind_speed}}</td>
+                                <td>{{data.description}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
