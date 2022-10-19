@@ -1,3 +1,4 @@
 openweather_app/.env
-.idea.idea
+.idea/
 __pycache__/
+.idea
